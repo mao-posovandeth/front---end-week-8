@@ -1,0 +1,9 @@
+questio 1 and 2
+-You must treat state as read-only because React relies on reference changes to know when to update the UI. 
+If you mutate an existing array (e.g., arr.push()), the memory reference stays the same, and React won't trigger a re-render. 
+Creating a new array provides a new reference, forcing React to refresh the screen
+que3tions 3 and 4
+-Using the spread operator to create a new array with the new item added at the end is
+a common and efficient way to update state in React.            
+const newArray = [...oldArray, newItem];
+This approach maintains immutability by creating a new array rather than modifying the existing one.

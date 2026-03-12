@@ -1,0 +1,17 @@
+Q1 & Q2: State Design
+State: The only state is the orders array inside App.jsx.
+Total Price: Is not a state; it is calculated on the fly (derived) from the orders array.
+Data Flow: App passes props (blue) down to children. OrderCard sends events (red) up to App to update the state.
+
+Q3 & Q4: Code Logic
+Displaying Items: Use orders.map() in App to render multiple OrderCard components.
+Calculating Total: const total = orders.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+
+Q5: Updating State (Immutably)
+When a button is clicked, you must replace the array, not change it.
+
+JavaScript
+const newOrders = orders.map(item => 
+  item.product === targetName ? { ...item, quantity: item.quantity + 1 } : item
+);
+setOrders(newOrders);
